@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".addedittask.AddEditTaskActivity"
+            android:name=".screens.addedittask.AddEditTaskActivity"
             android:label="Add a new Task" />
-        <activity android:name=".tasks.MainActivity">
+        <activity android:name=".screens.tasks.TaskListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

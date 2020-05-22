@@ -4,7 +4,7 @@
     <string name="main_activity_name">All Tasks</string>
     <string name="add_task_activity_name">Add a New Task</string>
 
-    <!-- Strings for MainActivity -->
+    <!-- Strings for TaskListActivity -->
     <string name="priority_1">1</string>
     <string name="priority_2">2</string>
     <string name="priority_3">3</string>
