@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.todomvvm.R;
-import com.example.todomvvm.screens.addedittask.AddEditTaskActivity;
 import com.example.todomvvm.data.task.entity.TaskEntry;
+import com.example.todomvvm.screens.addedittask.AddEditTaskActivity;
 import com.example.todomvvm.screens.tasks.adapter.TaskAdapter;
 import com.example.todomvvm.screens.tasks.viewmodel.MainActivityViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;

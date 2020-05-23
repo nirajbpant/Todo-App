@@ -1,28 +1,23 @@
 package com.example.todomvvm.data.user.entity;
 
-import java.io.Serializable;
-import java.util.Date;
-
 import androidx.annotation.NonNull;
-import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "users")
 public class UserEntity {
-   @PrimaryKey
-   @NonNull
+    @PrimaryKey
+    @NonNull
     private String email;
     private String firstName;
     private String lastName;
     private String password;
 
-    public UserEntity(String email, String firstName, String lastName, String password){
-        this.email= email;
-        this.firstName= firstName;
-        this.lastName= lastName;
-        this.password= password;
+    public UserEntity(String email, String firstName, String lastName, String password) {
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
     }
 
     public String getEmail() {
@@ -56,9 +51,6 @@ public class UserEntity {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
-
 
 
 }

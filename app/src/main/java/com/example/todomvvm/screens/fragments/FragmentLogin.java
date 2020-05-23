@@ -1,9 +1,6 @@
 package com.example.todomvvm.screens.fragments;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,38 +20,37 @@ public class FragmentLogin extends Fragment {
     CallbackFragment callbackFragment;
 
 
-
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
-        View view= inflater.inflate(R.layout.login_fragment, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.login_fragment, container, false);
         return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        editEmail= view.findViewById(R.id.editEmail);
-        editPassword= view.findViewById(R.id.editPassword);
-        button_Login= view.findViewById(R.id.button_Login);
-        button_Register= view.findViewById(R.id.button_Register);
+        editEmail = view.findViewById(R.id.editEmail);
+        editPassword = view.findViewById(R.id.editPassword);
+        button_Login = view.findViewById(R.id.button_Login);
+        button_Register = view.findViewById(R.id.button_Register);
 
-        button_Login.setOnClickListener(new View.OnClickListener(){
+        button_Login.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
 
             }
         });
-        button_Register.setOnClickListener(new View.OnClickListener(){
+        button_Register.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                if(callbackFragment!=null){
+            public void onClick(View v) {
+                if (callbackFragment != null) {
                     callbackFragment.changeFragment();
                 }
             }
         });
     }
 
-    public void setCallbackFragment(CallbackFragment callbackFragment){
-        this.callbackFragment= callbackFragment;
+    public void setCallbackFragment(CallbackFragment callbackFragment) {
+        this.callbackFragment = callbackFragment;
     }
 }

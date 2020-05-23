@@ -3,9 +3,6 @@ package com.example.todomvvm.data.user;
 
 import com.example.todomvvm.data.user.entity.UserEntity;
 
-import java.util.List;
-
-import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;

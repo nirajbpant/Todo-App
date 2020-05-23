@@ -2,7 +2,6 @@ package com.example.todomvvm.screens.addedittask.viewmodel;
 
 import android.app.Application;
 
-import com.example.todomvvm.data.task.TaskDatabase;
 import com.example.todomvvm.data.task.TaskRepository;
 import com.example.todomvvm.data.task.entity.TaskEntry;
 
@@ -16,8 +15,8 @@ public class AddEditTaskViewModel extends AndroidViewModel {
 
     AddEditTaskViewModel(Application application, int taskId) {
         super(application);
-        TaskDatabase database = TaskDatabase.getInstance(application);
-        taskRepository = new TaskRepository(database);
+
+        taskRepository = TaskRepository.getInstance(application);
         if (taskId != -1)
             task = taskRepository.getTaskById(taskId);
     }

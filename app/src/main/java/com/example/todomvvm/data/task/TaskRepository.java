@@ -1,5 +1,7 @@
 package com.example.todomvvm.data.task;
 
+import android.content.Context;
+
 import com.example.todomvvm.data.task.entity.TaskEntry;
 
 import java.util.List;
@@ -8,10 +10,19 @@ import androidx.lifecycle.LiveData;
 
 public class TaskRepository {
 
+    private static TaskRepository instance;
     TaskDao dao;
 
-    public TaskRepository(TaskDatabase taskDatabase) {
-        dao = taskDatabase.taskDao();
+    private TaskRepository(Context context) {
+        TaskDatabase database = TaskDatabase.getInstance(context);
+        dao = database.taskDao();
+    }
+
+    public static TaskRepository getInstance(Context context) {
+        if (instance == null) {
+            instance = new TaskRepository(context);
+        }
+        return instance;
     }
 
     public LiveData<List<TaskEntry>> getTasks() {
