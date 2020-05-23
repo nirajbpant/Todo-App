@@ -19,9 +19,7 @@
         <activity
             android:name=".screens.addedittask.AddEditTaskActivity"
             android:label="Add a new Task" />
-        <activity android:name=".screens.tasks.TaskListActivity">
-
-        </activity>
+        <activity android:name=".screens.tasks.TaskListActivity" />
     </application>
 
 </manifest>
