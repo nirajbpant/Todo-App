@@ -33,5 +33,6 @@ public abstract class UserDatabase extends RoomDatabase {
         Log.d(LOG_TAG, "Getting the database instance");
         return sInstance;
     }
+    public abstract UserDao userDao();
 
 }
