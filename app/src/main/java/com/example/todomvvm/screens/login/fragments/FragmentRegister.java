@@ -8,14 +8,17 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.todomvvm.R;
+import com.example.todomvvm.screens.login.viewmodel.LoginRegisterViewModel;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 
 public class FragmentRegister extends Fragment {
     Button button_Register;
     EditText editFirstName, editLastName, editEmail, editPassword;
+    LoginRegisterViewModel loginRegisterViewModel;
 
     @Nullable
     @Override
@@ -31,10 +34,12 @@ public class FragmentRegister extends Fragment {
         editEmail = view.findViewById(R.id.editEmail);
         editPassword = view.findViewById(R.id.editPassword);
         button_Register = view.findViewById(R.id.button_Register);
+        loginRegisterViewModel = ViewModelProviders.of(this).get(LoginRegisterViewModel.class);
         button_Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                loginRegisterViewModel.registerUser(editEmail.getText().toString(), editFirstName.getText().toString(),
+                        editLastName.getText().toString(), editPassword.getText().toString());
             }
         });
     }

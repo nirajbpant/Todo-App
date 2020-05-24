@@ -20,8 +20,7 @@ public class MainActivityViewModel extends AndroidViewModel {
 
     public MainActivityViewModel(Application application) {
         super(application);
-        TaskDatabase database = TaskDatabase.getInstance(application);
-        taskRepository = new TaskRepository(database);
+        taskRepository = TaskRepository.getInstance(application);
         tasks = taskRepository.getTasks();
     }
 
