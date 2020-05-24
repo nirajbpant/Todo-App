@@ -15,8 +15,8 @@ import androidx.room.Update;
 @Dao
 public interface TaskDao {
 
-    @Query("select * from task order by priority")
-    LiveData<List<TaskEntry>> loadAllTasks();
+    @Query("select * from task where user_email = :email order by priority")
+    LiveData<List<TaskEntry>> loadAllTasks(String email);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertTask(TaskEntry task);

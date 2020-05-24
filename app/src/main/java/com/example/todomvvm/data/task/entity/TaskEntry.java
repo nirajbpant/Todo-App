@@ -16,19 +16,43 @@ public class TaskEntry {
     private int priority;
     @ColumnInfo(name = "updated_at")
     private Date updatedAt;
+    @ColumnInfo(name = "expires_at")
+    private Date expiresAt;
+    @ColumnInfo(name = "user_email")
+    private String userEmail;
 
     @Ignore
-    public TaskEntry(String description, int priority, Date updatedAt) {
+    public TaskEntry(String description, int priority, String userEmail, Date expiresAt) {
         this.description = description;
         this.priority = priority;
-        this.updatedAt = updatedAt;
+        this.userEmail = userEmail;
+        this.expiresAt = expiresAt;
+        this.updatedAt = new Date();
     }
 
-    public TaskEntry(int id, String description, int priority, Date updatedAt) {
+    public TaskEntry(int id, String description, int priority, String userEmail, Date expiresAt) {
         this.id = id;
         this.description = description;
         this.priority = priority;
-        this.updatedAt = updatedAt;
+        this.userEmail = userEmail;
+        this.expiresAt = expiresAt;
+        this.updatedAt = new Date();
+    }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public Date getExpiresAt() {
+        return expiresAt;
+    }
+
+    public void setExpiresAt(Date expiresAt) {
+        this.expiresAt = expiresAt;
     }
 
     public int getId() {
@@ -62,4 +86,5 @@ public class TaskEntry {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+
 }

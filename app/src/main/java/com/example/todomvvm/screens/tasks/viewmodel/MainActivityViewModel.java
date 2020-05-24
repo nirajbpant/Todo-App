@@ -2,6 +2,7 @@ package com.example.todomvvm.screens.tasks.viewmodel;
 
 import android.app.Application;
 
+import com.example.todomvvm.data.session.SessionRepository;
 import com.example.todomvvm.data.task.TaskRepository;
 import com.example.todomvvm.data.task.entity.TaskEntry;
 
@@ -20,7 +21,9 @@ public class MainActivityViewModel extends AndroidViewModel {
     public MainActivityViewModel(Application application) {
         super(application);
         taskRepository = TaskRepository.getInstance(application);
-        tasks = taskRepository.getTasks();
+        SessionRepository sessionRepository = SessionRepository.getInstance(application);
+
+        tasks = taskRepository.getTasks(sessionRepository.getEmail());
     }
 
     public LiveData<List<TaskEntry>> getTasks() {

@@ -2,6 +2,7 @@ package com.example.todomvvm.screens.login.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,17 +45,25 @@ public class FragmentLogin extends Fragment {
         button_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean checkLogin = loginRegisterViewModel.loginUser(editEmail.getText().toString(), editPassword.getText().toString());
-                if (checkLogin) {
-                    Intent intent = new Intent(getContext(), TaskListActivity.class);
-                    startActivity(intent);
-                    getActivity().finish();
-                } else {
+                if(!TextUtils.isEmpty(editEmail.getText()) && !TextUtils.isEmpty(editPassword.getText())) {
+                    boolean checkLogin = loginRegisterViewModel.loginUser(editEmail.getText().toString(), editPassword.getText().toString());
+
+                    if (checkLogin) {
+                        Intent intent = new Intent(getContext(), TaskListActivity.class);
+                        startActivity(intent);
+                        getActivity().finish();
+                    } else {
+                        Toast.makeText(getContext(),
+                                "Incorrect Login Credentials",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }else{
                     Toast.makeText(getContext(),
-                            "Incorrect Login Credentials",
+                            "Please fill in LogIn Credentials",
                             Toast.LENGTH_SHORT).show();
                 }
             }
+
         });
 
         button_Register.setOnClickListener(new View.OnClickListener() {

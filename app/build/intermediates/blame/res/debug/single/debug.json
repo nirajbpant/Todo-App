@@ -700,6 +700,10 @@
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\5d52d9573d8a8f70a8462cc8f8a42ce9\\material-1.1.0\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
     },
     {
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_logout.xml.flat",
+        "source": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\src\\main\\res\\drawable\\ic_logout.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
@@ -846,6 +850,10 @@
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\menu_appmenu.xml.flat",
+        "source": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\src\\main\\res\\menu\\appmenu.xml"
     },
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
@@ -1346,6 +1354,10 @@
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_activity_chooser_view_list_item.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_mic_black_24dp.xml.flat",
+        "source": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\src\\main\\res\\drawable\\ic_mic_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_choice_chip_background_color.xml.flat",

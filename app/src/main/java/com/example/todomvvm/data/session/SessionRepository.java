@@ -26,8 +26,9 @@ public class SessionRepository {
         return sessionPreferenceManager.hasSession();
     }
 
-    public void logout() {
+    public boolean logout() {
         sessionPreferenceManager.clearSession();
+        return true;
     }
 
     public boolean logIn(String email, String password) {
@@ -47,5 +48,11 @@ public class SessionRepository {
         return true;
 
     }
+    public void terminateSession(){
+        sessionPreferenceManager.clearSession();
+    }
 
+    public String getEmail() {
+        return sessionPreferenceManager.getEmail();
+    }
 }

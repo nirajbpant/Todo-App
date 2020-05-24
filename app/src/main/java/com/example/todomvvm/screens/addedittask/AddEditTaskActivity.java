@@ -2,8 +2,11 @@ package com.example.todomvvm.screens.addedittask;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
@@ -12,8 +15,10 @@ import com.example.todomvvm.data.task.entity.TaskEntry;
 import com.example.todomvvm.screens.addedittask.viewmodel.AddEditTaskViewModel;
 import com.example.todomvvm.screens.addedittask.viewmodel.AddEditTaskViewModelFactory;
 
+import java.util.Calendar;
 import java.util.Date;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -38,6 +43,7 @@ public class AddEditTaskActivity extends AppCompatActivity {
     Button mButton;
     AddEditTaskViewModel viewModel;
     private int mTaskId = DEFAULT_TASK_ID;
+    private CalendarView mCalendarView;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +73,9 @@ public class AddEditTaskActivity extends AppCompatActivity {
                     public void onChanged(TaskEntry taskEntry) {
                         viewModel.getTask().removeObserver(this);
                         populateUI(taskEntry);
+                        viewModel.setDescription(taskEntry.getDescription());
+                        viewModel.setExpiresAt(taskEntry.getExpiresAt());
+                        viewModel.setPriority(taskEntry.getPriority());
                     }
                 });
 
@@ -89,12 +98,41 @@ public class AddEditTaskActivity extends AppCompatActivity {
     private void initViews() {
         mEditText = findViewById(R.id.editTextTaskDescription);
         mRadioGroup = findViewById(R.id.radioGroup);
-
+        mCalendarView= findViewById(R.id.calender);
         mButton = findViewById(R.id.saveButton);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onSaveButtonClicked();
+            }
+        });
+
+        mEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                viewModel.setDescription(editable.toString());
+            }
+        });
+        getPriorityFromViews();
+        mCalendarView.setMinDate(new Date().getTime());
+        mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int day) {
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, month);
+                calendar.set(Calendar.DAY_OF_MONTH, day);
+                viewModel.setExpiresAt(new Date(calendar.getTimeInMillis()));
             }
         });
     }
@@ -110,7 +148,7 @@ public class AddEditTaskActivity extends AppCompatActivity {
         }
         mEditText.setText(task.getDescription());
         setPriorityInViews(task.getPriority());
-
+        mCalendarView.setDate(task.getExpiresAt().getTime());
     }
 
     /**
@@ -119,17 +157,7 @@ public class AddEditTaskActivity extends AppCompatActivity {
      */
     public void onSaveButtonClicked() {
         // Not yet implemented
-        String description = mEditText.getText().toString();
-        int priority = getPriorityFromViews();
-        Date date = new Date();
-        TaskEntry todo = new TaskEntry(description, priority, date);
-        if (mTaskId == DEFAULT_TASK_ID)
-            viewModel.insertTask(todo);
-        else {
-            todo.setId(mTaskId);
-            viewModel.updateTask(todo);
-
-        }
+       viewModel.save(mTaskId == DEFAULT_TASK_ID );
         finish();
 
     }
@@ -137,20 +165,26 @@ public class AddEditTaskActivity extends AppCompatActivity {
     /**
      * getPriority is called whenever the selected priority needs to be retrieved
      */
-    public int getPriorityFromViews() {
-        int priority = 1;
-        int checkedId = ((RadioGroup) findViewById(R.id.radioGroup)).getCheckedRadioButtonId();
-        switch (checkedId) {
-            case R.id.radButton1:
-                priority = PRIORITY_HIGH;
-                break;
-            case R.id.radButton2:
-                priority = PRIORITY_MEDIUM;
-                break;
-            case R.id.radButton3:
-                priority = PRIORITY_LOW;
-        }
-        return priority;
+    public void getPriorityFromViews() {
+        RadioGroup radioGroup =  findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                int priority = 1;
+                switch (checkedId) {
+                    case R.id.radButton1:
+                        priority = PRIORITY_HIGH;
+                        break;
+                    case R.id.radButton2:
+                        priority = PRIORITY_MEDIUM;
+                        break;
+                    case R.id.radButton3:
+                        priority = PRIORITY_LOW;
+                }
+
+                viewModel.setPriority(priority);
+            }
+        });
     }
 
     /**

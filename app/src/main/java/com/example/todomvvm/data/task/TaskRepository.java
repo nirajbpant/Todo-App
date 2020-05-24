@@ -25,8 +25,8 @@ public class TaskRepository {
         return instance;
     }
 
-    public LiveData<List<TaskEntry>> getTasks() {
-        return dao.loadAllTasks();
+    public LiveData<List<TaskEntry>> getTasks(String email) {
+        return dao.loadAllTasks(email);
     }
 
     public LiveData<TaskEntry> getTaskById(int taskId) {

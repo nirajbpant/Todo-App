@@ -36,7 +36,7 @@ public final class TaskDao_Impl implements TaskDao {
     this.__insertionAdapterOfTaskEntry = new EntityInsertionAdapter<TaskEntry>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `task` (`id`,`description`,`priority`,`updated_at`) VALUES (nullif(?, 0),?,?,?)";
+        return "INSERT OR REPLACE INTO `task` (`id`,`description`,`priority`,`updated_at`,`expires_at`,`user_email`) VALUES (nullif(?, 0),?,?,?,?,?)";
       }
 
       @Override
@@ -54,6 +54,18 @@ public final class TaskDao_Impl implements TaskDao {
           stmt.bindNull(4);
         } else {
           stmt.bindLong(4, _tmp);
+        }
+        final Long _tmp_1;
+        _tmp_1 = DateConverter.toTimeStamp(value.getExpiresAt());
+        if (_tmp_1 == null) {
+          stmt.bindNull(5);
+        } else {
+          stmt.bindLong(5, _tmp_1);
+        }
+        if (value.getUserEmail() == null) {
+          stmt.bindNull(6);
+        } else {
+          stmt.bindString(6, value.getUserEmail());
         }
       }
     };
@@ -71,7 +83,7 @@ public final class TaskDao_Impl implements TaskDao {
     this.__updateAdapterOfTaskEntry = new EntityDeletionOrUpdateAdapter<TaskEntry>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR ABORT `task` SET `id` = ?,`description` = ?,`priority` = ?,`updated_at` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `task` SET `id` = ?,`description` = ?,`priority` = ?,`updated_at` = ?,`expires_at` = ?,`user_email` = ? WHERE `id` = ?";
       }
 
       @Override
@@ -90,7 +102,19 @@ public final class TaskDao_Impl implements TaskDao {
         } else {
           stmt.bindLong(4, _tmp);
         }
-        stmt.bindLong(5, value.getId());
+        final Long _tmp_1;
+        _tmp_1 = DateConverter.toTimeStamp(value.getExpiresAt());
+        if (_tmp_1 == null) {
+          stmt.bindNull(5);
+        } else {
+          stmt.bindLong(5, _tmp_1);
+        }
+        if (value.getUserEmail() == null) {
+          stmt.bindNull(6);
+        } else {
+          stmt.bindString(6, value.getUserEmail());
+        }
+        stmt.bindLong(7, value.getId());
       }
     };
   }
@@ -132,9 +156,15 @@ public final class TaskDao_Impl implements TaskDao {
   }
 
   @Override
-  public LiveData<List<TaskEntry>> loadAllTasks() {
-    final String _sql = "select * from task order by priority";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+  public LiveData<List<TaskEntry>> loadAllTasks(final String email) {
+    final String _sql = "select * from task where user_email = ? order by priority";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (email == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, email);
+    }
     return __db.getInvalidationTracker().createLiveData(new String[]{"task"}, false, new Callable<List<TaskEntry>>() {
       @Override
       public List<TaskEntry> call() throws Exception {
@@ -144,6 +174,8 @@ public final class TaskDao_Impl implements TaskDao {
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
           final int _cursorIndexOfPriority = CursorUtil.getColumnIndexOrThrow(_cursor, "priority");
           final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
+          final int _cursorIndexOfExpiresAt = CursorUtil.getColumnIndexOrThrow(_cursor, "expires_at");
+          final int _cursorIndexOfUserEmail = CursorUtil.getColumnIndexOrThrow(_cursor, "user_email");
           final List<TaskEntry> _result = new ArrayList<TaskEntry>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final TaskEntry _item;
@@ -153,15 +185,26 @@ public final class TaskDao_Impl implements TaskDao {
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
             final int _tmpPriority;
             _tmpPriority = _cursor.getInt(_cursorIndexOfPriority);
-            final Date _tmpUpdatedAt;
+            final Date _tmpExpiresAt;
             final Long _tmp;
-            if (_cursor.isNull(_cursorIndexOfUpdatedAt)) {
+            if (_cursor.isNull(_cursorIndexOfExpiresAt)) {
               _tmp = null;
             } else {
-              _tmp = _cursor.getLong(_cursorIndexOfUpdatedAt);
+              _tmp = _cursor.getLong(_cursorIndexOfExpiresAt);
             }
-            _tmpUpdatedAt = DateConverter.toDate(_tmp);
-            _item = new TaskEntry(_tmpId,_tmpDescription,_tmpPriority,_tmpUpdatedAt);
+            _tmpExpiresAt = DateConverter.toDate(_tmp);
+            final String _tmpUserEmail;
+            _tmpUserEmail = _cursor.getString(_cursorIndexOfUserEmail);
+            _item = new TaskEntry(_tmpId,_tmpDescription,_tmpPriority,_tmpUserEmail,_tmpExpiresAt);
+            final Date _tmpUpdatedAt;
+            final Long _tmp_1;
+            if (_cursor.isNull(_cursorIndexOfUpdatedAt)) {
+              _tmp_1 = null;
+            } else {
+              _tmp_1 = _cursor.getLong(_cursorIndexOfUpdatedAt);
+            }
+            _tmpUpdatedAt = DateConverter.toDate(_tmp_1);
+            _item.setUpdatedAt(_tmpUpdatedAt);
             _result.add(_item);
           }
           return _result;
@@ -192,6 +235,8 @@ public final class TaskDao_Impl implements TaskDao {
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
           final int _cursorIndexOfPriority = CursorUtil.getColumnIndexOrThrow(_cursor, "priority");
           final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
+          final int _cursorIndexOfExpiresAt = CursorUtil.getColumnIndexOrThrow(_cursor, "expires_at");
+          final int _cursorIndexOfUserEmail = CursorUtil.getColumnIndexOrThrow(_cursor, "user_email");
           final TaskEntry _result;
           if(_cursor.moveToFirst()) {
             final int _tmpId;
@@ -200,15 +245,26 @@ public final class TaskDao_Impl implements TaskDao {
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
             final int _tmpPriority;
             _tmpPriority = _cursor.getInt(_cursorIndexOfPriority);
-            final Date _tmpUpdatedAt;
+            final Date _tmpExpiresAt;
             final Long _tmp;
-            if (_cursor.isNull(_cursorIndexOfUpdatedAt)) {
+            if (_cursor.isNull(_cursorIndexOfExpiresAt)) {
               _tmp = null;
             } else {
-              _tmp = _cursor.getLong(_cursorIndexOfUpdatedAt);
+              _tmp = _cursor.getLong(_cursorIndexOfExpiresAt);
             }
-            _tmpUpdatedAt = DateConverter.toDate(_tmp);
-            _result = new TaskEntry(_tmpId,_tmpDescription,_tmpPriority,_tmpUpdatedAt);
+            _tmpExpiresAt = DateConverter.toDate(_tmp);
+            final String _tmpUserEmail;
+            _tmpUserEmail = _cursor.getString(_cursorIndexOfUserEmail);
+            _result = new TaskEntry(_tmpId,_tmpDescription,_tmpPriority,_tmpUserEmail,_tmpExpiresAt);
+            final Date _tmpUpdatedAt;
+            final Long _tmp_1;
+            if (_cursor.isNull(_cursorIndexOfUpdatedAt)) {
+              _tmp_1 = null;
+            } else {
+              _tmp_1 = _cursor.getLong(_cursorIndexOfUpdatedAt);
+            }
+            _tmpUpdatedAt = DateConverter.toDate(_tmp_1);
+            _result.setUpdatedAt(_tmpUpdatedAt);
           } else {
             _result = null;
           }
