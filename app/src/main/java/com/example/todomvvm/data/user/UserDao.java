@@ -15,4 +15,7 @@ public interface UserDao {
 
     @Insert
     void insertUser(UserEntity user);
+
+    @Query("select * from users where email= :email")
+    UserEntity hasUser(String email);
 }

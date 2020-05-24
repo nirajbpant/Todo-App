@@ -38,4 +38,9 @@ public class UserRepository {
         }
 
     }
+
+    public boolean userExists(String email) {
+        UserEntity user = dao.hasUser(email);
+        return user != null;
+    }
 }

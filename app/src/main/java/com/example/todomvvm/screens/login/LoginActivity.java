@@ -3,9 +3,9 @@ package com.example.todomvvm.screens.login;
 import android.os.Bundle;
 
 import com.example.todomvvm.R;
-import com.example.todomvvm.screens.fragments.CallbackFragment;
-import com.example.todomvvm.screens.fragments.FragmentLogin;
-import com.example.todomvvm.screens.fragments.FragmentRegister;
+import com.example.todomvvm.screens.login.fragments.CallbackFragment;
+import com.example.todomvvm.screens.login.fragments.FragmentLogin;
+import com.example.todomvvm.screens.login.fragments.FragmentRegister;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -16,6 +16,7 @@ public class LoginActivity extends AppCompatActivity implements CallbackFragment
     Fragment fragment;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

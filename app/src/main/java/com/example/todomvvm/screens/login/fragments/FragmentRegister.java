@@ -1,4 +1,4 @@
-package com.example.todomvvm.screens.fragments;
+package com.example.todomvvm.screens.login.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
