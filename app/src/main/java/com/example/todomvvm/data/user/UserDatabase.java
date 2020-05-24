@@ -26,7 +26,7 @@ public abstract class UserDatabase extends RoomDatabase {
             synchronized (LOCK) {
                 Log.d(LOG_TAG, "Creating a new user instance");
                 sInstance = Room.databaseBuilder(context.getApplicationContext(),
-                        UserDatabase.class, UserDatabase.DATABASE_NAME).build();
+                        UserDatabase.class, UserDatabase.DATABASE_NAME).allowMainThreadQueries().build();
             }
         }
         Log.d(LOG_TAG, "Getting the database instance");

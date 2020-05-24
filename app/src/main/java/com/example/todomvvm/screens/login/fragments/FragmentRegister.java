@@ -1,14 +1,17 @@
 package com.example.todomvvm.screens.login.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.todomvvm.R;
 import com.example.todomvvm.screens.login.viewmodel.LoginRegisterViewModel;
+import com.example.todomvvm.screens.splash.SplashActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,8 +41,18 @@ public class FragmentRegister extends Fragment {
         button_Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginRegisterViewModel.registerUser(editEmail.getText().toString(), editFirstName.getText().toString(),
-                        editLastName.getText().toString(), editPassword.getText().toString());
+                boolean checkRegister =
+                        loginRegisterViewModel.registerUser(editEmail.getText().toString(), editFirstName.getText().toString(),
+                                editLastName.getText().toString(), editPassword.getText().toString());
+                if (checkRegister) {
+                    Intent intent = new Intent(getContext(), SplashActivity.class);
+                    startActivity(intent);
+                    getActivity().finish();
+                } else {
+                    Toast.makeText(getContext(),
+                            "User Already Exists",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

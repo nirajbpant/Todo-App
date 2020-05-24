@@ -2,7 +2,6 @@ package com.example.todomvvm.screens.tasks.viewmodel;
 
 import android.app.Application;
 
-import com.example.todomvvm.data.task.TaskDatabase;
 import com.example.todomvvm.data.task.TaskRepository;
 import com.example.todomvvm.data.task.entity.TaskEntry;
 

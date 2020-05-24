@@ -18,7 +18,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.todomvvm.screens.splash.SplashActivity" >
+        <activity android:name="com.example.todomvvm.screens.login.LoginActivity" />
+        <activity
+            android:name="com.example.todomvvm.screens.splash.SplashActivity"
+            android:theme="@style/StyleTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
