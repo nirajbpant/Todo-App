@@ -30,6 +30,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_mic_black_24dp"
+            android:onClick="getSpeechInput"
             android:layout_gravity="end|center"
             android:background="?selectableItemBackgroundBorderless"
             />

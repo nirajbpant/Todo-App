@@ -2,10 +2,12 @@ package com.example.todomvvm.screens.tasks;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.todomvvm.R;
 import com.example.todomvvm.data.session.SessionRepository;
@@ -18,6 +20,7 @@ import com.example.todomvvm.screens.tasks.viewmodel.MainActivityViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
+import java.util.Locale;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -112,7 +115,6 @@ public class TaskListActivity extends AppCompatActivity implements TaskAdapter.I
         inflater.inflate(R.menu.appmenu, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
