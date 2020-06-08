@@ -57,13 +57,16 @@ public class AddEditTaskViewModel extends AndroidViewModel {
         this.expiresAt = expiresAt;
     }
 
-    public void save(boolean isCreate) {
+    public TaskEntry save(boolean isCreate) {
         String email = sessionRepository.getEmail();
         if (isCreate) {
-            insertTask(new TaskEntry(description, priority, email, expiresAt));
+            TaskEntry task = new TaskEntry(description, priority, email, expiresAt);
+            insertTask(task);
+            return task;
         } else {
-            updateTask(new TaskEntry(taskId, description, priority, email, expiresAt));
-
+            TaskEntry task = new TaskEntry(taskId, description, priority, email, expiresAt);
+            updateTask(task);
+            return task;
         }
     }
 }

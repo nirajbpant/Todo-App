@@ -21,6 +21,7 @@
             android:name=".screens.addedittask.AddEditTaskActivity"
             android:label="Add a new Task" />
         <activity android:name=".screens.tasks.TaskListActivity" />
+        <receiver android:name=".data.notification.ReminderBroadcast"/>
     </application>
 
 </manifest>

@@ -1,5 +1,7 @@
 package com.example.todomvvm.screens.addedittask;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
@@ -13,9 +15,11 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.todomvvm.R;
+import com.example.todomvvm.data.notification.ReminderBroadcast;
 import com.example.todomvvm.data.task.entity.TaskEntry;
 import com.example.todomvvm.screens.addedittask.viewmodel.AddEditTaskViewModel;
 import com.example.todomvvm.screens.addedittask.viewmodel.AddEditTaskViewModelFactory;
+import com.example.todomvvm.screens.tasks.TaskListActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -161,9 +165,24 @@ public class AddEditTaskActivity extends AppCompatActivity {
      */
     public void onSaveButtonClicked() {
         // Not yet implemented
-       viewModel.save(mTaskId == DEFAULT_TASK_ID );
-        finish();
+        boolean isCreate= mTaskId == DEFAULT_TASK_ID;
+        TaskEntry taskEntry = viewModel.save(isCreate);
+        AlarmManager alarmManager= (AlarmManager) getSystemService(ALARM_SERVICE);
+        if(alarmManager== null){
+            finish();
+            return;
+        }
+        Intent alarmIntent= new Intent(AddEditTaskActivity.this, ReminderBroadcast.class);
 
+        if(!isCreate){
+            PendingIntent pendingIntent= PendingIntent.getBroadcast(AddEditTaskActivity.this, mTaskId, alarmIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+            pendingIntent.cancel();
+            alarmManager.cancel(pendingIntent);
+        }
+
+        PendingIntent pendingIntent= PendingIntent.getBroadcast(AddEditTaskActivity.this, mTaskId, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, taskEntry.getExpiresAt().getTime()- 24*60*60*1000, pendingIntent );
+        finish();
     }
 
     public void getSpeechInput(View view){

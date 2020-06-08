@@ -2,6 +2,7 @@ package com.example.todomvvm.screens.login.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,16 +42,25 @@ public class FragmentRegister extends Fragment {
         button_Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean checkRegister =
-                        loginRegisterViewModel.registerUser(editEmail.getText().toString(), editFirstName.getText().toString(),
-                                editLastName.getText().toString(), editPassword.getText().toString());
-                if (checkRegister) {
-                    Intent intent = new Intent(getContext(), SplashActivity.class);
-                    startActivity(intent);
-                    getActivity().finish();
-                } else {
+                if (!TextUtils.isEmpty(editFirstName.getText()) &&
+                        !TextUtils.isEmpty(editLastName.getText()) &&
+                        !TextUtils.isEmpty(editEmail.getText()) &&
+                        !TextUtils.isEmpty(editPassword.getText())) {
+                    boolean checkRegister =
+                            loginRegisterViewModel.registerUser(editEmail.getText().toString(), editFirstName.getText().toString(),
+                                    editLastName.getText().toString(), editPassword.getText().toString());
+                    if (checkRegister) {
+                        Intent intent = new Intent(getContext(), SplashActivity.class);
+                        startActivity(intent);
+                        getActivity().finish();
+                    } else {
+                        Toast.makeText(getContext(),
+                                "User Already Exists",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }else{
                     Toast.makeText(getContext(),
-                            "User Already Exists",
+                            "Please fill in Register Credentials",
                             Toast.LENGTH_SHORT).show();
                 }
             }

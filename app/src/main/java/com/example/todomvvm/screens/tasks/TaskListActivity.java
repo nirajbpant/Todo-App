@@ -1,6 +1,11 @@
 package com.example.todomvvm.screens.tasks;
 
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.Menu;
@@ -10,6 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.todomvvm.R;
+import com.example.todomvvm.data.notification.ReminderBroadcast;
 import com.example.todomvvm.data.session.SessionRepository;
 import com.example.todomvvm.data.task.entity.TaskEntry;
 import com.example.todomvvm.screens.addedittask.AddEditTaskActivity;
@@ -46,10 +52,11 @@ public class TaskListActivity extends AppCompatActivity implements TaskAdapter.I
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_list);
+        createNotificationChannel();
 
         viewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
         logoutViewModel = ViewModelProviders.of(this).get(LogoutViewModel.class);
-        // Set the RecyclerView to its corresponding view
+        // Set the RecyclerView to  its corresponding view
         mRecyclerView = findViewById(R.id.recyclerViewTasks);
 
         // Set the layout for the RecyclerView to be a linear layout, which measures and
@@ -135,5 +142,19 @@ public class TaskListActivity extends AppCompatActivity implements TaskAdapter.I
         Intent intent = new Intent(TaskListActivity.this, AddEditTaskActivity.class);
         intent.putExtra(AddEditTaskActivity.EXTRA_TASK_ID, itemId);
         startActivity(intent);
+    }
+    public void createNotificationChannel(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Channel";
+            String description = "Notification for To-do Date reached.";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("100", name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+
+        }
     }
 }
