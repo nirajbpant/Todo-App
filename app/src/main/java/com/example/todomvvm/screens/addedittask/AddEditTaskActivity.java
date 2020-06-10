@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -19,7 +20,6 @@ import com.example.todomvvm.data.notification.ReminderBroadcast;
 import com.example.todomvvm.data.task.entity.TaskEntry;
 import com.example.todomvvm.screens.addedittask.viewmodel.AddEditTaskViewModel;
 import com.example.todomvvm.screens.addedittask.viewmodel.AddEditTaskViewModelFactory;
-import com.example.todomvvm.screens.tasks.TaskListActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -56,9 +56,8 @@ public class AddEditTaskActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit_task);
-
-
         initViews();
+
 
         if (savedInstanceState != null && savedInstanceState.containsKey(INSTANCE_TASK_ID)) {
             mTaskId = savedInstanceState.getInt(INSTANCE_TASK_ID, DEFAULT_TASK_ID);
@@ -69,29 +68,30 @@ public class AddEditTaskActivity extends AppCompatActivity {
         if (intent != null && intent.hasExtra(EXTRA_TASK_ID)) {
             mButton.setText(R.string.update_button);
 
-            if (mTaskId == DEFAULT_TASK_ID) {
-                // populate the UI
+            // populate the UI
 
-                mTaskId = intent.getIntExtra(EXTRA_TASK_ID, DEFAULT_TASK_ID);
-                AddEditTaskViewModelFactory factory = new AddEditTaskViewModelFactory(getApplication(), mTaskId);
-                viewModel = ViewModelProviders.of(this, factory).get(AddEditTaskViewModel.class);
+            mTaskId = intent.getIntExtra(EXTRA_TASK_ID, DEFAULT_TASK_ID);
+            AddEditTaskViewModelFactory factory = new AddEditTaskViewModelFactory(getApplication(), mTaskId);
+            viewModel = ViewModelProviders.of(this, factory).get(AddEditTaskViewModel.class);
+            Log.d("error", "error from above" + viewModel);
 
-                viewModel.getTask().observe(this, new Observer<TaskEntry>() {
-                    @Override
-                    public void onChanged(TaskEntry taskEntry) {
-                        viewModel.getTask().removeObserver(this);
-                        populateUI(taskEntry);
-                        viewModel.setDescription(taskEntry.getDescription());
-                        viewModel.setExpiresAt(taskEntry.getExpiresAt());
-                        viewModel.setPriority(taskEntry.getPriority());
-                    }
-                });
+            viewModel.getTask().observe(this, new Observer<TaskEntry>() {
+                @Override
+                public void onChanged(TaskEntry taskEntry) {
+                    viewModel.getTask().removeObserver(this);
+                    populateUI(taskEntry);
+                    viewModel.setDescription(taskEntry.getDescription());
+                    viewModel.setExpiresAt(taskEntry.getExpiresAt());
+                    viewModel.setPriority(taskEntry.getPriority());
+                }
+            });
 
-            }
         } else {
             AddEditTaskViewModelFactory factory = new AddEditTaskViewModelFactory(getApplication(), mTaskId);
             viewModel = ViewModelProviders.of(this, factory).get(AddEditTaskViewModel.class);
+            Log.d("error", "error from above" + viewModel);
         }
+        initializeListeners();
     }
 
     @Override
@@ -106,8 +106,12 @@ public class AddEditTaskActivity extends AppCompatActivity {
     private void initViews() {
         mEditText = findViewById(R.id.editTextTaskDescription);
         mRadioGroup = findViewById(R.id.radioGroup);
-        mCalendarView= findViewById(R.id.calender);
+        mCalendarView = findViewById(R.id.calender);
         mButton = findViewById(R.id.saveButton);
+
+    }
+
+    private void initializeListeners() {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -128,7 +132,9 @@ public class AddEditTaskActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                Log.d("error", "Error from below" + viewModel);
                 viewModel.setDescription(editable.toString());
+
             }
         });
         getPriorityFromViews();
@@ -165,56 +171,58 @@ public class AddEditTaskActivity extends AppCompatActivity {
      */
     public void onSaveButtonClicked() {
         // Not yet implemented
-        boolean isCreate= mTaskId == DEFAULT_TASK_ID;
+        boolean isCreate = mTaskId == DEFAULT_TASK_ID;
         TaskEntry taskEntry = viewModel.save(isCreate);
-        AlarmManager alarmManager= (AlarmManager) getSystemService(ALARM_SERVICE);
-        if(alarmManager== null){
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        if (alarmManager == null) {
             finish();
             return;
         }
-        Intent alarmIntent= new Intent(AddEditTaskActivity.this, ReminderBroadcast.class);
+        Intent alarmIntent = new Intent(AddEditTaskActivity.this, ReminderBroadcast.class);
 
-        if(!isCreate){
-            PendingIntent pendingIntent= PendingIntent.getBroadcast(AddEditTaskActivity.this, mTaskId, alarmIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        if (!isCreate) {
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(AddEditTaskActivity.this, mTaskId, alarmIntent, PendingIntent.FLAG_CANCEL_CURRENT);
             pendingIntent.cancel();
             alarmManager.cancel(pendingIntent);
         }
 
-        PendingIntent pendingIntent= PendingIntent.getBroadcast(AddEditTaskActivity.this, mTaskId, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, taskEntry.getExpiresAt().getTime()- 24*60*60*1000, pendingIntent );
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(AddEditTaskActivity.this, mTaskId, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, taskEntry.getExpiresAt().getTime() - 24 * 60 * 60 * 1000, pendingIntent);
         finish();
     }
 
-    public void getSpeechInput(View view){
-        Intent intent= new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+    public void getSpeechInput(View view) {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, Locale.getDefault());
-        if(intent.resolveActivity(getPackageManager())!= null){
+        if (intent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(intent, 10);
-        }else{
-            Toast.makeText(this, "Your device does not support Speech Input",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Your device does not support Speech Input", Toast.LENGTH_SHORT).show();
         }
 
 
     }
+
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode){
+        switch (requestCode) {
             case 10:
-                if(resultCode== RESULT_OK && data!= null){
-                    ArrayList<String> result= data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                if (resultCode == RESULT_OK && data != null) {
+                    ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     mEditText.setText(result.get(0));
                 }
                 break;
 
         }
     }
+
     /**
      * getPriority is called whenever the selected priority needs to be retrieved
      */
     public void getPriorityFromViews() {
-        RadioGroup radioGroup =  findViewById(R.id.radioGroup);
+        RadioGroup radioGroup = findViewById(R.id.radioGroup);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {

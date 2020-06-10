@@ -33,6 +33,8 @@
             android:label="Add a new Task" />
         <activity android:name="com.example.todomvvm.screens.tasks.TaskListActivity" />
 
+        <receiver android:name="com.example.todomvvm.data.notification.ReminderBroadcast" />
+
         <service
             android:name="androidx.room.MultiInstanceInvalidationService"
             android:directBootAware="true"
