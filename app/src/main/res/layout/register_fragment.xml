@@ -4,9 +4,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/HomeScreen"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lemon"
+        android:text="Register"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.755" />
+
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -14,32 +31,21 @@
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="6dp">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Register"
-            android:textColor="#000"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="28dp" />
-
+        app:layout_constraintVertical_bias="0.6">
 
         <EditText
             android:id="@+id/editFirstName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
+            android:background="@drawable/shape_register_text"
             android:ems="10"
-            android:paddingTop="20dp"
             android:hint="First Name"
+            android:paddingLeft="10dp"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="131dp" />
@@ -48,9 +54,11 @@
         <EditText
             android:id="@+id/editLastName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/shape_register_text"
             android:ems="10"
             android:hint="Last Name"
             android:inputType="textPersonName"
@@ -60,39 +68,43 @@
         <EditText
             android:id="@+id/editEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/shape_register_text"
             android:ems="10"
             android:hint="Email"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="70dp" />
+
         <EditText
             android:id="@+id/editPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/shape_register_text"
             android:ems="10"
             android:hint="Password"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="131dp" />
 
 
-
-        <Button
-            android:id="@+id/button_Register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@color/design_default_color_primary"
-            android:text="Register"
-            android:textColor="@color/design_default_color_surface"
-            tools:layout_editor_absoluteX="32dp"
-            tools:layout_editor_absoluteY="202dp" />
-
-
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button_Register"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_register_buttons"
+        android:text="Register"
+        android:textColor="@color/design_default_color_surface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

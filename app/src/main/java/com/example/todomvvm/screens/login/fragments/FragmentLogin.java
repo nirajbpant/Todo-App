@@ -3,6 +3,7 @@ package com.example.todomvvm.screens.login.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +57,6 @@ public class FragmentLogin extends Fragment {
 
                 if(!TextUtils.isEmpty(editEmail.getText()) && !TextUtils.isEmpty(editPassword.getText())) {
                     boolean checkLogin = loginRegisterViewModel.loginUser(editEmail.getText().toString(), editPassword.getText().toString());
-
                     if (checkLogin) {
                         Intent intent = new Intent(getContext(), TaskListActivity.class);
                         startActivity(intent);
@@ -68,7 +68,7 @@ public class FragmentLogin extends Fragment {
                     }
                 }else{
                     Toast.makeText(getContext(),
-                            "Please fill in LogIn Credentials",
+                            "Please fill in Login Credentials",
                             Toast.LENGTH_SHORT).show();
                 }
             }

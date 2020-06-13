@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/HomeScreen">
+
+    <Button
+        android:id="@+id/button_Login"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_buttons"
+        android:text="Login"
+        android:textColor="@color/design_default_color_on_primary"
+        app:layout_constraintBottom_toTopOf="@+id/button_Register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+
+    <Button
+        android:id="@+id/button_Register"
+        android:layout_width="150dp"
+        android:layout_height="44dp"
+        android:background="@drawable/shape_register_buttons"
+        android:text="Register"
+        android:textColor="@color/design_default_color_surface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.519" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -17,27 +45,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Login"
-            android:textColor="#000"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="28dp" />
 
         <EditText
             android:id="@+id/editEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
+            android:background="@drawable/shape_text"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
             android:hint="Username"
+            android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="70dp" />
 
@@ -45,38 +64,31 @@
         <EditText
             android:id="@+id/editPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/shape_text"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="131dp" />
-
-
-        <Button
-            android:id="@+id/button_Login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/design_default_color_secondary_variant"
-            android:text="Login"
-            android:textColor="@color/design_default_color_on_primary"
-            tools:layout_editor_absoluteX="32dp"
-            tools:layout_editor_absoluteY="202dp" />
-
-
-        <Button
-            android:id="@+id/button_Register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="@color/design_default_color_primary"
-            android:text="Register"
-            android:textColor="@color/design_default_color_surface"
-            tools:layout_editor_absoluteX="32dp"
-            tools:layout_editor_absoluteY="202dp" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lemon"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.786" />
 </androidx.constraintlayout.widget.ConstraintLayout>

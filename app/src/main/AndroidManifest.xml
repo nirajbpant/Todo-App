@@ -22,6 +22,9 @@
             android:label="Add a new Task" />
         <activity android:name=".screens.tasks.TaskListActivity" />
         <receiver android:name=".data.notification.ReminderBroadcast"/>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

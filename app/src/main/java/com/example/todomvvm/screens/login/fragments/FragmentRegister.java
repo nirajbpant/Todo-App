@@ -3,6 +3,7 @@ package com.example.todomvvm.screens.login.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +20,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class FragmentRegister extends Fragment {
     Button button_Register;
     EditText editFirstName, editLastName, editEmail, editPassword;
     LoginRegisterViewModel loginRegisterViewModel;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,10 +44,12 @@ public class FragmentRegister extends Fragment {
         editPassword = view.findViewById(R.id.editPassword);
         button_Register = view.findViewById(R.id.button_Register);
         loginRegisterViewModel = ViewModelProviders.of(this).get(LoginRegisterViewModel.class);
-        button_Register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
+        button_Register.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
                 boolean checkRegister = loginRegisterViewModel.registerUser(editEmail.getText().toString()
                         , editFirstName.getText().toString(),
                         editLastName.getText().toString(), editPassword.getText().toString());
@@ -56,18 +63,14 @@ public class FragmentRegister extends Fragment {
 
                 else if(editEmail.getText().toString().isEmpty()) {
                     editEmail.setError("Enter email address");
-                }else {
-                    if (editEmail.getText().toString().trim().matches(emailPattern)) {
-                        editEmail.setError("Valid email address");
-                    } else {
-                        editEmail.setError("Invalid email address");
-                    }
+                }else if (!editEmail.getText().toString().trim().matches(emailPattern)) {
+                    editEmail.setError("Invalid email address");
                 }
 
-                if(editPassword.getText().toString().equals("")){
+
+                if(editPassword.getText().toString().equals("")) {
                     editPassword.setError("Enter valid password");
                 }
-
 
                 else if (checkRegister) {
                     Intent intent = new Intent(getContext(), SplashActivity.class);
@@ -79,7 +82,7 @@ public class FragmentRegister extends Fragment {
                             "User Already Exists",
                             Toast.LENGTH_SHORT).show();
                 }
-                }
+            }
 
         });
     }

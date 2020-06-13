@@ -190,6 +190,8 @@ public class AddEditTaskActivity extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(AddEditTaskActivity.this, mTaskId, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
         alarmManager.set(AlarmManager.RTC_WAKEUP, new Date().getTime() +  60 * 1000, pendingIntent);
         finish();
+
+        //taskEntry.getExpiresAt().getTime() - 24 * 60 * 60 * 1000
     }
 
     public void getSpeechInput(View view) {
