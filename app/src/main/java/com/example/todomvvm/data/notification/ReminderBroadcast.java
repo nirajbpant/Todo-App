@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.util.Log;
 
 import com.example.todomvvm.R;
 import com.example.todomvvm.data.task.entity.TaskEntry;
@@ -23,7 +24,7 @@ public class ReminderBroadcast extends BroadcastReceiver {
                 .setContentTitle("Task Reminder")
                 .setContentText("Alert! You have a task pending to be completed")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
+        Log.d("test", "this is test");
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);
 
         notificationManagerCompat.notify(200, builder.build());

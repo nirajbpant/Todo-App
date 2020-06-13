@@ -45,6 +45,15 @@ public class FragmentLogin extends Fragment {
         button_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (editEmail.getText().toString().equals(""))
+                {
+                    editEmail.setError("Please enter your email address");
+                }
+
+                else if(editPassword.getText().toString().equals("")){
+                    editPassword.setError("Enter valid password");
+                }
+
                 if(!TextUtils.isEmpty(editEmail.getText()) && !TextUtils.isEmpty(editPassword.getText())) {
                     boolean checkLogin = loginRegisterViewModel.loginUser(editEmail.getText().toString(), editPassword.getText().toString());
 

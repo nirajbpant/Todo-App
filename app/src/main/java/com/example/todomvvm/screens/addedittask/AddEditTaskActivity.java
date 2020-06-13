@@ -127,7 +127,8 @@ public class AddEditTaskActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+                String taskDescription = mEditText.getText().toString().trim();
+                mButton.setEnabled(!taskDescription.isEmpty());
             }
 
             @Override
@@ -187,7 +188,7 @@ public class AddEditTaskActivity extends AppCompatActivity {
         }
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(AddEditTaskActivity.this, mTaskId, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, taskEntry.getExpiresAt().getTime() - 24 * 60 * 60 * 1000, pendingIntent);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, new Date().getTime() +  60 * 1000, pendingIntent);
         finish();
     }
 
