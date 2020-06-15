@@ -6,6 +6,7 @@ import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
+import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
@@ -30,6 +31,8 @@ public final class TaskDao_Impl implements TaskDao {
   private final EntityDeletionOrUpdateAdapter<TaskEntry> __deletionAdapterOfTaskEntry;
 
   private final EntityDeletionOrUpdateAdapter<TaskEntry> __updateAdapterOfTaskEntry;
+
+  private final SharedSQLiteStatement __preparedStmtOfDeleteAll;
 
   public TaskDao_Impl(RoomDatabase __db) {
     this.__db = __db;
@@ -117,6 +120,13 @@ public final class TaskDao_Impl implements TaskDao {
         stmt.bindLong(7, value.getId());
       }
     };
+    this.__preparedStmtOfDeleteAll = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "DELETE FROM task";
+        return _query;
+      }
+    };
   }
 
   @Override
@@ -152,6 +162,20 @@ public final class TaskDao_Impl implements TaskDao {
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
+    }
+  }
+
+  @Override
+  public void deleteAll() {
+    __db.assertNotSuspendingTransaction();
+    final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteAll.acquire();
+    __db.beginTransaction();
+    try {
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfDeleteAll.release(_stmt);
     }
   }
 

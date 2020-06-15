@@ -11,7 +11,7 @@
 9-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:5:5-25:19
+11-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:5:5-28:19
 12        android:allowBackup="true"
 12-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -62,25 +62,32 @@
 36-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:24:9-72
 36-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:24:19-70
 37
-38        <service
-38-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
-39            android:name="androidx.room.MultiInstanceInvalidationService"
-39-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
-40            android:directBootAware="true"
-40-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
-41            android:exported="false" />
-41-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
-42
-43        <provider
-43-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-44            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-44-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-45            android:authorities="com.example.todomvvm.lifecycle-process"
-45-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-46            android:exported="false"
-46-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-47            android:multiprocess="true" />
-47-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
-48    </application>
-49
-50</manifest>
+38        <meta-data
+38-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:25:9-27:57
+39            android:name="preloaded_fonts"
+39-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:26:13-43
+40            android:resource="@array/preloaded_fonts" />
+40-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:27:13-54
+41
+42        <service
+42-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
+43            android:name="androidx.room.MultiInstanceInvalidationService"
+43-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
+44            android:directBootAware="true"
+44-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
+45            android:exported="false" />
+45-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
+46
+47        <provider
+47-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+48            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+48-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+49            android:authorities="com.example.todomvvm.lifecycle-process"
+49-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+50            android:exported="false"
+50-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+51            android:multiprocess="true" />
+51-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+52    </application>
+53
+54</manifest>

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-27:12
+ADDED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-30:12
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\5d52d9573d8a8f70a8462cc8f8a42ce9\material-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\6119d746697059b7e1b74aab4d181f56\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\3ec6fa8458ddbe732478393a9f9e6c77\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
@@ -38,25 +38,25 @@ MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\HP\.gradle\caches\tr
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\8ede11fcab21498f1a0c92e4e5245cc2\lifecycle-viewmodel-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\78be57497ca2a8dd090798c529f3e53d\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\3a992d8307f21a8f15eb649383ba6a6a\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-30:12
 	package
 		ADDED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:3:5-35
 		INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-27:12
+		ADDED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-30:12
 		INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-27:12
+		ADDED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:1-30:12
 		INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:5:5-25:19
+ADDED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:5:5-28:19
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\5d52d9573d8a8f70a8462cc8f8a42ce9\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\5d52d9573d8a8f70a8462cc8f8a42ce9\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\3ec6fa8458ddbe732478393a9f9e6c77\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
@@ -119,6 +119,12 @@ receiver#com.example.todomvvm.data.notification.ReminderBroadcast
 ADDED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:24:9-72
 	android:name
 		ADDED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:24:19-70
+meta-data#preloaded_fonts
+ADDED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:25:9-27:57
+	android:resource
+		ADDED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:27:13-54
+	android:name
+		ADDED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:26:13-43
 uses-sdk
 INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml

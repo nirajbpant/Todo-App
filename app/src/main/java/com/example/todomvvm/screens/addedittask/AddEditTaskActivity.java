@@ -1,8 +1,11 @@
 package com.example.todomvvm.screens.addedittask;
 
 import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.text.Editable;
@@ -56,6 +59,7 @@ public class AddEditTaskActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit_task);
+        createNotificationChannel();
         initViews();
 
 
@@ -182,12 +186,15 @@ public class AddEditTaskActivity extends AppCompatActivity {
         Intent alarmIntent = new Intent(AddEditTaskActivity.this, ReminderBroadcast.class);
 
         if (!isCreate) {
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(AddEditTaskActivity.this, mTaskId, alarmIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(AddEditTaskActivity.this,
+                    mTaskId, alarmIntent,
+                    PendingIntent.FLAG_CANCEL_CURRENT);
             pendingIntent.cancel();
             alarmManager.cancel(pendingIntent);
         }
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(AddEditTaskActivity.this, mTaskId, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(AddEditTaskActivity.this,
+                mTaskId, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
         alarmManager.set(AlarmManager.RTC_WAKEUP, new Date().getTime() +  60 * 1000, pendingIntent);
         finish();
 
@@ -261,6 +268,19 @@ public class AddEditTaskActivity extends AppCompatActivity {
                 break;
             case PRIORITY_LOW:
                 ((RadioGroup) findViewById(R.id.radioGroup)).check(R.id.radButton3);
+        }
+    }
+    public void createNotificationChannel(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Channel";
+            String description = "Notification for To-do Date reached.";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("100", name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
         }
     }
 }

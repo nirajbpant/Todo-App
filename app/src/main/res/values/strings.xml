@@ -20,4 +20,10 @@
 
     <string name="add_button">Add</string>
     <string name="update_button">Update</string>
+    <string name="name_error">Please Enter your name</string>
+    <string name="last_name_error">Please Enter Your Last Name</string>
+    <string name="email_error">Please Enter a Email address</string>
+    <string name="error_invalid_email">Email is not valid Email</string>
+    <string name="password_error">Please Enter a Password</string>
+    <string name="error_invalid_password">Please enter a minimum of 6 characters</string>
 </resources>

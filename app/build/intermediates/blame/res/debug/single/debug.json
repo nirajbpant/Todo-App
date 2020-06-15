@@ -32,6 +32,10 @@
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\5d52d9573d8a8f70a8462cc8f8a42ce9\\material-1.1.0\\res\\color\\mtrl_btn_stroke_color_selector.xml"
     },
     {
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shape_text.xml.flat",
+        "source": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\src\\main\\res\\drawable\\shape_text.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_calendar_year.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\5d52d9573d8a8f70a8462cc8f8a42ce9\\material-1.1.0\\res\\layout\\mtrl_calendar_year.xml"
     },
@@ -48,12 +52,12 @@
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
-        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
-        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\e9dab9c67c1ee3668e0bbf86c6d8cbd8\\core-1.1.0\\res\\drawable-v21\\notification_action_background.xml"
-    },
-    {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\e9dab9c67c1ee3668e0bbf86c6d8cbd8\\core-1.1.0\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
@@ -72,20 +76,24 @@
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\5d52d9573d8a8f70a8462cc8f8a42ce9\\material-1.1.0\\res\\color\\material_on_background_disabled.xml"
     },
     {
-        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_login_fragment.xml.flat",
-        "source": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\src\\main\\res\\layout\\login_fragment.xml"
-    },
-    {
-        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_chip_state_list_anim.xml.flat",
-        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\5d52d9573d8a8f70a8462cc8f8a42ce9\\material-1.1.0\\res\\animator\\mtrl_chip_state_list_anim.xml"
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\anim_btn_checkbox_to_checked_box_inner_merged_animation.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\anim\\btn_checkbox_to_checked_box_inner_merged_animation.xml"
     },
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\anim_btn_checkbox_to_checked_box_inner_merged_animation.xml.flat",
-        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\anim\\btn_checkbox_to_checked_box_inner_merged_animation.xml"
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_chip_state_list_anim.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\5d52d9573d8a8f70a8462cc8f8a42ce9\\material-1.1.0\\res\\animator\\mtrl_chip_state_list_anim.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shape_register_text.xml.flat",
+        "source": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\src\\main\\res\\drawable\\shape_register_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_login_fragment.xml.flat",
+        "source": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\src\\main\\res\\layout\\login_fragment.xml"
     },
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\animator_design_fab_show_motion_spec.xml.flat",
@@ -232,16 +240,16 @@
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_16dp.png.flat",
-        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_ic_star_black_16dp.png"
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_text_view_with_line_height_from_layout.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\5d52d9573d8a8f70a8462cc8f8a42ce9\\material-1.1.0\\res\\layout\\text_view_with_line_height_from_layout.xml"
     },
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
-        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_text_view_with_line_height_from_layout.xml.flat",
-        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\5d52d9573d8a8f70a8462cc8f8a42ce9\\material-1.1.0\\res\\layout\\text_view_with_line_height_from_layout.xml"
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ratingbar_small_material.xml.flat",
@@ -272,16 +280,16 @@
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
-        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_48dp.png.flat",
-        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_48dp.png"
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_calendar_day.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\5d52d9573d8a8f70a8462cc8f8a42ce9\\material-1.1.0\\res\\layout\\mtrl_calendar_day.xml"
     },
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_dialog_material_background.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-v21\\abc_dialog_material_background.xml"
     },
     {
-        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_calendar_day.xml.flat",
-        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\5d52d9573d8a8f70a8462cc8f8a42ce9\\material-1.1.0\\res\\layout\\mtrl_calendar_day.xml"
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -428,12 +436,12 @@
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_add_alert_black_24dp.xml.flat",
         "source": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\src\\main\\res\\drawable\\ic_add_alert_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -746,6 +754,10 @@
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\font_cantata_one.xml.flat",
+        "source": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\src\\main\\res\\font\\cantata_one.xml"
     },
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -1160,6 +1172,10 @@
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_homepagescreen.png.flat",
+        "source": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\src\\main\\res\\drawable\\homepagescreen.png"
+    },
+    {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_test_action_chip.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\5d52d9573d8a8f70a8462cc8f8a42ce9\\material-1.1.0\\res\\layout\\test_action_chip.xml"
     },
@@ -1174,6 +1190,10 @@
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shape_register_buttons.xml.flat",
+        "source": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\src\\main\\res\\drawable\\shape_register_buttons.xml"
     },
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -1322,6 +1342,10 @@
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_test_design_checkbox.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\5d52d9573d8a8f70a8462cc8f8a42ce9\\material-1.1.0\\res\\layout\\test_design_checkbox.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_taskscreen.png.flat",
+        "source": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\src\\main\\res\\drawable\\taskscreen.png"
     },
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -1708,6 +1732,10 @@
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\5d52d9573d8a8f70a8462cc8f8a42ce9\\material-1.1.0\\res\\drawable\\mtrl_popupmenu_background.xml"
     },
     {
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shape_buttons.xml.flat",
+        "source": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\src\\main\\res\\drawable\\shape_buttons.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
@@ -1932,12 +1960,12 @@
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\e9dab9c67c1ee3668e0bbf86c6d8cbd8\\core-1.1.0\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
-        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\e9dab9c67c1ee3668e0bbf86c6d8cbd8\\core-1.1.0\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\6119d746697059b7e1b74aab4d181f56\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_icon_group.xml.flat",
@@ -2310,6 +2338,10 @@
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\anim_fragment_fade_exit.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-2\\files-2.1\\e9533afcfb379d63fb97295e8fded06a\\fragment-1.2.0\\res\\anim\\fragment_fade_exit.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\font_lemon.xml.flat",
+        "source": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\src\\main\\res\\font\\lemon.xml"
     },
     {
         "merged": "C:\\Users\\HP\\Desktop\\android-todo-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
