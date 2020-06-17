@@ -8,5 +8,8 @@
     <item android:id="@+id/deleteAllOption"
         android:title="Delete all Tasks"
         app:showAsAction="never"/>
+    <item android:id="@+id/supportUS"
+        android:title="Support us!"
+        app:showAsAction="never"/>
 
 </menu>

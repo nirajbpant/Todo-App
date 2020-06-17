@@ -69,7 +69,7 @@ public class FragmentRegister extends Fragment {
                     }
                 } else {
                     Toast.makeText(getContext(),
-                            "Please fill in Login Credentials",
+                            "Please fill in Register Credentials",
                             Toast.LENGTH_SHORT).show();
                 }
 

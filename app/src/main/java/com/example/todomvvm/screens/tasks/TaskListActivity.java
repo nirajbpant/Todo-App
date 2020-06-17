@@ -8,6 +8,7 @@ import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
@@ -31,6 +32,7 @@ import com.example.todomvvm.screens.tasks.viewmodel.MainActivityViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Locale;
 
@@ -157,10 +159,15 @@ public class TaskListActivity extends AppCompatActivity implements TaskAdapter.I
                 logoutViewModel.LogOutUser();
                 Intent intent = new Intent(this, SplashActivity.class);
                 startActivity(intent);
-                finish();
+                return true;
             case R.id.deleteAllOption:
                 handleOpenAlertDialogue();
+                return true;
 
+            case R.id.supportUS:
+                Intent implicitIntent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/nirajbpant"));
+                startActivity(implicitIntent);
+                return true;
 
         }
         return super.onOptionsItemSelected(item);
@@ -175,7 +182,7 @@ public class TaskListActivity extends AppCompatActivity implements TaskAdapter.I
     }
 
     public void handleOpenAlertDialogue(){
-        AlertDialog alertDialog= new AlertDialog.Builder(this)
+        final AlertDialog alertDialog= new AlertDialog.Builder(this)
                 .setTitle("Confirmation")
                 .setMessage("Are you sure you want to delete all the tasks?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {

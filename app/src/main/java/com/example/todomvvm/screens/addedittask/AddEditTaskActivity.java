@@ -23,6 +23,7 @@ import com.example.todomvvm.data.notification.ReminderBroadcast;
 import com.example.todomvvm.data.task.entity.TaskEntry;
 import com.example.todomvvm.screens.addedittask.viewmodel.AddEditTaskViewModel;
 import com.example.todomvvm.screens.addedittask.viewmodel.AddEditTaskViewModelFactory;
+import com.example.todomvvm.screens.tasks.TaskListActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -33,6 +34,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+
+import static com.example.todomvvm.data.notification.ReminderBroadcast.ARGS_DESCRIPTION;
+import static com.example.todomvvm.data.notification.ReminderBroadcast.ARGS_TASK_ID;
+import static com.example.todomvvm.data.notification.ReminderBroadcast.CHANNEL_ID;
 
 public class AddEditTaskActivity extends AppCompatActivity {
 
@@ -184,6 +189,8 @@ public class AddEditTaskActivity extends AppCompatActivity {
             return;
         }
         Intent alarmIntent = new Intent(AddEditTaskActivity.this, ReminderBroadcast.class);
+        alarmIntent.putExtra(ARGS_TASK_ID, taskEntry.getId());
+        alarmIntent.putExtra(ARGS_DESCRIPTION,taskEntry.getDescription());
 
         if (!isCreate) {
             PendingIntent pendingIntent = PendingIntent.getBroadcast(AddEditTaskActivity.this,
@@ -192,13 +199,14 @@ public class AddEditTaskActivity extends AppCompatActivity {
             pendingIntent.cancel();
             alarmManager.cancel(pendingIntent);
         }
+            Intent notifyIntent= new Intent(this, TaskListActivity.class);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(AddEditTaskActivity.this,
+                    mTaskId, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
+                alarmManager.set(AlarmManager.RTC_WAKEUP, new Date().getTime() + 60 * 1000, pendingIntent);
+            finish();
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(AddEditTaskActivity.this,
-                mTaskId, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, new Date().getTime() +  60 * 1000, pendingIntent);
-        finish();
+            //taskEntry.getExpiresAt().getTime() - 24 * 60 * 60 * 1000
 
-        //taskEntry.getExpiresAt().getTime() - 24 * 60 * 60 * 1000
     }
 
     public void getSpeechInput(View view) {
@@ -275,7 +283,7 @@ public class AddEditTaskActivity extends AppCompatActivity {
             CharSequence name = "Channel";
             String description = "Notification for To-do Date reached.";
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel = new NotificationChannel("100", name, importance);
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
             channel.setDescription(description);
             // Register the channel with the system; you can't change the importance
             // or other notification behaviors after this
