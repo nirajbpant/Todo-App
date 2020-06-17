@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".screens.login.LoginActivity"></activity>
-        <activity android:name=".screens.splash.SplashActivity" android:theme="@style/StyleTheme">
+        <activity android:name=".screens.login.LoginActivity" android:screenOrientation="fullSensor"></activity>
+        <activity android:name=".screens.splash.SplashActivity" android:theme="@style/StyleTheme" android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +20,8 @@
         <activity
             android:name=".screens.addedittask.AddEditTaskActivity"
             android:label="Add a new Task" />
-        <activity android:name=".screens.tasks.TaskListActivity" />
+        <activity android:name=".screens.tasks.TaskListActivity"
+            android:launchMode="singleTop"/>
         <receiver android:name=".data.notification.ReminderBroadcast"/>
         <meta-data
             android:name="preloaded_fonts"

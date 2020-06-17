@@ -11,7 +11,7 @@
 9-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:5:5-28:19
+11-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:5:5-29:19
 12        android:allowBackup="true"
 12-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -28,66 +28,74 @@
 19        android:testOnly="true"
 20        android:theme="@style/AppTheme" >
 20-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:11:9-40
-21        <activity android:name="com.example.todomvvm.screens.login.LoginActivity" />
-21-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:12:9-74
-21-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:12:19-62
-22        <activity
-22-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:13:9-19:20
-23            android:name="com.example.todomvvm.screens.splash.SplashActivity"
-23-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:13:19-64
-24            android:theme="@style/StyleTheme" >
-24-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:13:65-98
-25            <intent-filter>
-25-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:14:13-18:29
-26                <action android:name="android.intent.action.MAIN" />
-26-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:15:17-69
-26-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:15:25-66
-27
-28                <category android:name="android.intent.category.LAUNCHER" />
-28-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:17:17-77
-28-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:17:27-74
-29            </intent-filter>
-30        </activity>
-31        <activity
-31-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:20:9-22:46
-32            android:name="com.example.todomvvm.screens.addedittask.AddEditTaskActivity"
-32-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:21:13-68
-33            android:label="Add a new Task" />
-33-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:22:13-43
-34        <activity android:name="com.example.todomvvm.screens.tasks.TaskListActivity" />
-34-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:23:9-68
-34-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:23:19-65
-35
-36        <receiver android:name="com.example.todomvvm.data.notification.ReminderBroadcast" />
-36-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:24:9-72
-36-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:24:19-70
-37
-38        <meta-data
-38-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:25:9-27:57
-39            android:name="preloaded_fonts"
-39-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:26:13-43
-40            android:resource="@array/preloaded_fonts" />
-40-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:27:13-54
-41
-42        <service
-42-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
-43            android:name="androidx.room.MultiInstanceInvalidationService"
-43-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
-44            android:directBootAware="true"
-44-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
-45            android:exported="false" />
-45-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
+21        <activity
+21-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:12:9-113
+22            android:name="com.example.todomvvm.screens.login.LoginActivity"
+22-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:12:19-62
+23            android:screenOrientation="fullSensor" />
+23-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:12:63-101
+24        <activity
+24-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:13:9-19:20
+25            android:name="com.example.todomvvm.screens.splash.SplashActivity"
+25-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:13:19-64
+26            android:screenOrientation="fullSensor"
+26-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:13:99-137
+27            android:theme="@style/StyleTheme" >
+27-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:13:65-98
+28            <intent-filter>
+28-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:14:13-18:29
+29                <action android:name="android.intent.action.MAIN" />
+29-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:15:17-69
+29-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:15:25-66
+30
+31                <category android:name="android.intent.category.LAUNCHER" />
+31-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:17:17-77
+31-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:17:27-74
+32            </intent-filter>
+33        </activity>
+34        <activity
+34-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:20:9-22:46
+35            android:name="com.example.todomvvm.screens.addedittask.AddEditTaskActivity"
+35-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:21:13-68
+36            android:label="Add a new Task" />
+36-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:22:13-43
+37        <activity
+37-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:23:9-24:45
+38            android:name="com.example.todomvvm.screens.tasks.TaskListActivity"
+38-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:23:19-65
+39            android:launchMode="singleTop" />
+39-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:24:13-43
+40
+41        <receiver android:name="com.example.todomvvm.data.notification.ReminderBroadcast" />
+41-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:25:9-72
+41-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:25:19-70
+42
+43        <meta-data
+43-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:26:9-28:57
+44            android:name="preloaded_fonts"
+44-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:27:13-43
+45            android:resource="@array/preloaded_fonts" />
+45-->C:\Users\HP\Desktop\android-todo-master\app\src\main\AndroidManifest.xml:28:13-54
 46
-47        <provider
-47-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-48            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-48-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-49            android:authorities="com.example.todomvvm.lifecycle-process"
-49-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-50            android:exported="false"
-50-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-51            android:multiprocess="true" />
-51-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
-52    </application>
-53
-54</manifest>
+47        <service
+47-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
+48            android:name="androidx.room.MultiInstanceInvalidationService"
+48-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
+49            android:directBootAware="true"
+49-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
+50            android:exported="false" />
+50-->[androidx.room:room-runtime:2.2.5] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\805a1d2e9b3fbae882408f53634ffae8\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
+51
+52        <provider
+52-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+53            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+53-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+54            android:authorities="com.example.todomvvm.lifecycle-process"
+54-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+55            android:exported="false"
+55-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+56            android:multiprocess="true" />
+56-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\HP\.gradle\caches\transforms-2\files-2.1\58629c19fa6c616abd60edc0d2bb07b8\lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+57    </application>
+58
+59</manifest>

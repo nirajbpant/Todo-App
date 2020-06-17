@@ -19,9 +19,12 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.todomvvm.screens.login.LoginActivity" />
+        <activity
+            android:name="com.example.todomvvm.screens.login.LoginActivity"
+            android:screenOrientation="fullSensor" />
         <activity
             android:name="com.example.todomvvm.screens.splash.SplashActivity"
+            android:screenOrientation="fullSensor"
             android:theme="@style/StyleTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +35,9 @@
         <activity
             android:name="com.example.todomvvm.screens.addedittask.AddEditTaskActivity"
             android:label="Add a new Task" />
-        <activity android:name="com.example.todomvvm.screens.tasks.TaskListActivity" />
+        <activity
+            android:name="com.example.todomvvm.screens.tasks.TaskListActivity"
+            android:launchMode="singleTop" />
 
         <receiver android:name="com.example.todomvvm.data.notification.ReminderBroadcast" />
 

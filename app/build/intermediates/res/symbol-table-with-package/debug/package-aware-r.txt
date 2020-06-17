@@ -826,6 +826,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color materialOrange
 color materialRed
 color materialYellow
@@ -1682,6 +1683,7 @@ id start
 id stretch
 id submenuarrow
 id submit_area
+id supportUS
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans

@@ -4,6 +4,7 @@ import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -60,6 +61,7 @@ public class AddEditTaskActivity extends AppCompatActivity {
     AddEditTaskViewModel viewModel;
     private int mTaskId = DEFAULT_TASK_ID;
     private CalendarView mCalendarView;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -199,7 +201,6 @@ public class AddEditTaskActivity extends AppCompatActivity {
             pendingIntent.cancel();
             alarmManager.cancel(pendingIntent);
         }
-            Intent notifyIntent= new Intent(this, TaskListActivity.class);
             PendingIntent pendingIntent = PendingIntent.getBroadcast(AddEditTaskActivity.this,
                     mTaskId, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
                 alarmManager.set(AlarmManager.RTC_WAKEUP, new Date().getTime() + 60 * 1000, pendingIntent);

@@ -4,23 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/homepagescreen"
+    android:background="@drawable/registerpage"
     android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/lemon"
-        android:text="Register"
-        android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.755" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -34,62 +19,55 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6">
+        app:layout_constraintVertical_bias="0.684">
 
         <EditText
             android:id="@+id/editFirstName"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/shape_register_text"
+            android:layout_width="330dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="25dp"
             android:ems="10"
             android:hint="First Name"
-            android:paddingLeft="10dp"
             android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:paddingTop="7dp"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="131dp" />
 
 
         <EditText
             android:id="@+id/editLastName"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="10dp"
-            android:background="@drawable/shape_register_text"
+            android:layout_width="330dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="25dp"
             android:ems="10"
             android:hint="Last Name"
             android:inputType="textPersonName"
+            android:paddingLeft="10dp"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="131dp" />
 
         <EditText
             android:id="@+id/editEmail"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="10dp"
-            android:background="@drawable/shape_register_text"
+            android:layout_width="330dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="25dp"
             android:ems="10"
             android:hint="Email"
             android:inputType="textPersonName"
+            android:paddingLeft="10dp"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="70dp" />
 
         <EditText
             android:id="@+id/editPassword"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="10dp"
-            android:background="@drawable/shape_register_text"
+            android:layout_width="330dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="25dp"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
+            android:paddingLeft="10dp"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="131dp" />
 
@@ -100,11 +78,13 @@
         android:id="@+id/button_Register"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_register_buttons"
+        android:background="#4FA1F3"
         android:text="Register"
         android:textColor="@color/design_default_color_surface"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.573" />
 </androidx.constraintlayout.widget.ConstraintLayout>
