@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
+        android:background="#E4E4EC"
         android:paddingBottom="80dp" />
 
     <!-- Floating action button that launches AddTaskActivity when clicked -->

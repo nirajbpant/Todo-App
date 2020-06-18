@@ -115,7 +115,7 @@ public class FragmentRegister extends Fragment {
         }
 
         if (isNameValid && isLastNameValid && isEmailValid  && isPasswordValid) {
-            Toast.makeText(getContext(), "Successfully", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Successfully Registered, Welcome", Toast.LENGTH_SHORT).show();
         }
 
     }
